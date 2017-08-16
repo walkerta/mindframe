@@ -1,8 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
-
-
 
 
 
@@ -10,23 +7,13 @@ import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
     render(){
       return(
         <div>
-          <Navbar color='blue' toggleable>
 
-            <NavbarBrand href='/'>Journal</NavbarBrand>
+          <ul>
+            <li><Link to="/">Home </Link></li>
+              <li><Link to="/customize">Customize</Link></li>
+          </ul>
 
-            <Nav navbar>
-              <NavItem>
-                <NavLink href='/'>Home</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href='/entry'>Themes</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href='/entry'>Views</NavLink>
-              </NavItem>
-            </Nav>
 
-          </Navbar>
           {this.props.children}
         </div>
       )
