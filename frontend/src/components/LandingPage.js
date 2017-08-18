@@ -1,46 +1,42 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Appbar from 'muicss/lib/react/appbar';
-//import {Link} from 'react-router-dom';
-import Panel from 'muicss/lib/react/panel';
-import Container from 'muicss/lib/react/container';
+//import { Link } from 'react-router-dom';
+import Form from 'muicss/lib/react/form';
+import Input from 'muicss/lib/react/input';
+import Textarea from 'muicss/lib/react/textarea';
+import Button from 'muicss/lib/react/button';
+import { Container, FormGroup, Label, } from 'reactstrap';
+
+
 
 export default class LandingPage extends React.Component {
   render() {
-    let s1 = {
-      verticalAlign: 'middle'
-    };
-    let s2 = {
-      textAlign: 'right'
-    };
-
     return (
 
+      <Container>
+      <Form>
+        <legend>First Name</legend>
+        <Input label="Required Text Field" floatingLabel={true} required={true} />
 
-      <Appbar>
+          <legend>Last Name</legend>
+          <Input label="Required Text Field" floatingLabel={true} required={true} />
 
-      <table width="100%">
-        <tbody>
-          <tr style={s1}>
-            <td className="mui--appbar-height"></td>
-            <td className="mui--appbar-height" style={s2}>
-
-              <em>Home Theme Views</em>
-            </td>
-          </tr>
-        </tbody>
-        <h1><em>Mindframe</em></h1>
-      </table>
-
-      <Panel>
-        {}
-      </Panel>
+        <legend>Email</legend>
+        <Input label="Required Email Address" type="email" floatingLabel={true} required={true} />
 
 
-    </Appbar>
+        <Input label="Password" type="password" defaultValue="Validation error" />
+
+        <Input label=" Confirm Password" type="password" defaultValue="Validation error" />
 
 
 
+        <Button variant="raised">Submit</Button>
+      </Form>
+
+
+
+
+</Container>
     );
   }
 }
