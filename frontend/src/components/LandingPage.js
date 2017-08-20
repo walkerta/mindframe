@@ -1,42 +1,52 @@
 import React from 'react';
-//import { Link } from 'react-router-dom';
-import Form from 'muicss/lib/react/form';
-import Input from 'muicss/lib/react/input';
-import Textarea from 'muicss/lib/react/textarea';
+import TextField from 'material-ui/TextField';
 import Button from 'muicss/lib/react/button';
-import { Container, FormGroup, Label, } from 'reactstrap';
+import Paper from 'material-ui/Paper';
 
 
+const TextFieldExampleSimple = () => (
+  <div>
+    <fieldset>
+      <legend><em><h2>Sign Up Information</h2></em></legend>
+    <TextField
+      hintText="First Name Field"
+      floatingLabelText="First Name"
+    /><br />
 
-export default class LandingPage extends React.Component {
-  render() {
-    return (
+    <TextField
+      hintText="Last Name Field"
+      floatingLabelText="Last Name"
+    /><br />
+    <TextField
+      hintText="Email Field"
+      floatingLabelText="Email"
+    /><br />
 
-      <Container>
-      <Form>
-        <legend>First Name</legend>
-        <Input label="Required Text Field" floatingLabel={true} required={true} />
+    <TextField
+      hintText="User Name Field"
+      floatingLabelText="User Name"
+      type="username"
+      required="required"
+    /><br />
+    <TextField
+      hintText="Password Field"
+      floatingLabelText="Password"
+      type="password"
+      required="required"
+    /><br />
 
-          <legend>Last Name</legend>
-          <Input label="Required Text Field" floatingLabel={true} required={true} />
-
-        <legend>Email</legend>
-        <Input label="Required Email Address" type="email" floatingLabel={true} required={true} />
-
-
-        <Input label="Password" type="password" defaultValue="Validation error" />
-
-        <Input label=" Confirm Password" type="password" defaultValue="Validation error" />
-
-
-
-        <Button variant="raised">Submit</Button>
-      </Form>
-
+    <TextField
+      hintText="Password Field"
+      floatingLabelText="Confirm Password"
+      input type="password"
+      required="required"
+    /><br />
 
 
+  <Button color="primary" input type="submit" size="lg">Submit</Button>{' '}
+</fieldset>
+  </div>
 
-</Container>
-    );
-  }
-}
+);
+
+export default TextFieldExampleSimple;

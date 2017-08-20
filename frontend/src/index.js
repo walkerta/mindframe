@@ -23,6 +23,7 @@ import BaseLayout from './components/BaseLayout';
 import LandingPage from './components/LandingPage';
 import CustomizePage from './components/CustomizePage';
 
+
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 //wrap provider around router
