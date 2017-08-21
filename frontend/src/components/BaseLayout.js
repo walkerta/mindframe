@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
+import 'typeface-roboto';
 
 
 
@@ -37,6 +38,12 @@ export default class BaseLayout extends React.Component {
                </MenuItem>
                <MenuItem onClick={this.handleClose}>
                  <Link to="/Customize">Customize Page</Link>
+               </MenuItem>
+               <MenuItem onClick={this.handleClose}>
+                 <Link to="/HomePage">Home Page</Link>
+               </MenuItem>
+               <MenuItem onClick={this.handleClose}>
+                 <Link to="/SigninPage">Sign In</Link>
                </MenuItem>
              </Drawer>
              {this.props.children}
