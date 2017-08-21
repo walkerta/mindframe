@@ -869,3 +869,44 @@ ActionController::ParameterMissing (param is missing or the value is empty: entr
   
 app/controllers/entries_controller.rb:49:in `entry_params'
 app/controllers/entries_controller.rb:18:in `create'
+Started POST "/entries?title=First%20Title&body=lkdfjhglkdhglkdhlk%20ldksfjhglkjdfhlgkshlkf%20lkdsfjglksdfgsjdhlkfjgh%20lksdfjhglsdfkhlgkjshdlfk%20jgsdfjhglksdhjflgkhsdlfjkghsldkj%20hlghsldkfhglkdsh%20kljdfsjkghlkdfshglkjsdhlkg%20sldf" for 127.0.0.1 at 2017-08-21 18:21:16 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EntriesController#create as */*
+  Parameters: {"title"=>"First Title", "body"=>"lkdfjhglkdhglkdhlk ldksfjhglkjdfhlgkshlkf lkdsfjglksdfgsjdhlkfjgh lksdfjhglsdfkhlgkjshdlfk jgsdfjhglksdhjflgkhsdlfjkghsldkj hlghsldkfhglkdsh kljdfsjkghlkdfshglkjsdhlkg sldf"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 41ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserToEntries (20170821222310)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "entries" ADD "user_id" integer[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_entries_on_user_id" ON "entries" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170821222310"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_entries_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_entries_on_user_id' AND type='index'
+[0m
+Started POST "/entries?title=First%20Title&body=lkdfjhglkdhglkdhlk%20ldksfjhglkjdfhlgkshlkf%20lkdsfjglksdfgsjdhlkfjgh%20lksdfjhglsdfkhlgkjshdlfk%20jgsdfjhglksdhjflgkhsdlfjkghsldkj%20hlghsldkfhglkdsh%20kljdfsjkghlkdfshglkjsdhlkg%20sldf&user_id=1" for 127.0.0.1 at 2017-08-21 18:25:54 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EntriesController#create as */*
+  Parameters: {"title"=>"First Title", "body"=>"lkdfjhglkdhglkdhlk ldksfjhglkjdfhlgkshlkf lkdsfjglksdfgsjdhlkfjgh lksdfjhglsdfkhlgkjshdlfk jgsdfjhglksdhjflgkhsdlfjkghsldkj hlghsldkfhglkdsh kljdfsjkghlkdfshglkjsdhlkg sldf", "user_id"=>"1"}
+Unpermitted parameter: :user_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 15ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
