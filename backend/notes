@@ -1,7 +1,0 @@
->> u = User.create :userid => "myuserid", :password => "mypasswd", :user_first_name => "test", :user_last_name => "testovich", :user_status => "mystatus", :user_type => "mytype"
-
-
-
-User.new :username => "alex", :password => "password", :email => "arscholtes@gmail.com", :phone_number => "3172039112"
-
-=> #<User id: nil, username: "alex", email: "arscholtes@gmail.com", password_digest: "$2a$10$H1./m/XQsSYXMgReJD/dQu1ksvynnkZifqFN.5eZVyv...", user_id: nil, phone_number: 3172039112, created_at: nil, updated_at: nil>
