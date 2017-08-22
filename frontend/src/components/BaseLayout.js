@@ -47,6 +47,9 @@ export default class BaseLayout extends React.Component {
                <MenuItem onClick={this.handleClose}>
                  <Link to="/SigninPage">Sign In</Link>
                </MenuItem>
+               <MenuItem onClick={this.handleClose}>
+                 <Link to="/JournalPage">Sign In</Link>
+               </MenuItem>
              </Drawer>
              {this.props.children}
            </div>
