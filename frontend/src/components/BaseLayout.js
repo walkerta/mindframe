@@ -1,23 +1,56 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import CustomizePage from './CustomizePage';
-import LandingPage from './LandingPage';
+
+import {Link} from 'react-router-dom';
+import AppBar from 'material-ui/AppBar';
+import Drawer from 'material-ui/Drawer';
+import MenuItem from 'material-ui/MenuItem';
+import 'typeface-roboto';
 
 
 
-  export default class BaseLayout extends React.Component {
-    render(){
-      return(
-        <div>
 
-          <ul>
-            <li><Link to="/">Home </Link></li>
-              <li><Link to="/customize">Customize</Link></li>
-          </ul>
+//import Container from 'muicss/lib/react/container';
 
+export default class BaseLayout extends React.Component {
 
-          {this.props.children}
-        </div>
-      )
-    }
+  constructor(props) {
+    super(props);
+    this.state = {open: false};
   }
+
+  handleToggle = () => this.setState({open: !this.state.open});
+
+  handleClose = () => this.setState({open: false});
+  render() {
+      return (
+
+          <div>
+            <AppBar
+               title="Mindframe"
+               onLeftIconButtonTouchTap={this.handleToggle}
+               iconClassNameRight="muidocs-icon-navigation-expand-more"/>
+            <Drawer
+               docked={false}
+               width={200}
+               open={this.state.open}
+               onRequestChange={(open) => this.setState({open})}
+             >
+               <MenuItem onClick={this.handleClose}>
+                 <Link to="/">Landing Page</Link>
+               </MenuItem>
+               <MenuItem onClick={this.handleClose}>
+                 <Link to="/Customize">Customize Page</Link>
+               </MenuItem>
+               <MenuItem onClick={this.handleClose}>
+                 <Link to="/HomePage">Home Page</Link>
+               </MenuItem>
+               <MenuItem onClick={this.handleClose}>
+                 <Link to="/SigninPage">Sign In</Link>
+               </MenuItem>
+             </Drawer>
+             {this.props.children}
+           </div>
+
+      );
+  }
+}
