@@ -22,6 +22,7 @@ const TextFieldExampleSimple = () => (
       floatingLabelText="Email"
     /><br />
 
+
     <TextField
       hintText="User Name Field"
       floatingLabelText="User Name"
@@ -34,6 +35,7 @@ const TextFieldExampleSimple = () => (
       type="password"
       required="required"
     /><br />
+
 
     <TextField
       hintText="Password Field"
