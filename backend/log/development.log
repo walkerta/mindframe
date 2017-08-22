@@ -910,3 +910,316 @@ Unpermitted parameter: :user_id
 Completed 422 Unprocessable Entity in 15ms (Views: 0.2ms | ActiveRecord: 0.8ms)
 
 
+Started POST "/entries?title=First%20Title&body=lkdfjhglkdhglkdhlk%20ldksfjhglkjdfhlgkshlkf%20lkdsfjglksdfgsjdhlkfjgh%20lksdfjhglsdfkhlgkjshdlfk%20jgsdfjhglksdhjflgkhsdlfjkghsldkj%20hlghsldkfhglkdsh%20kljdfsjkghlkdfshglkjsdhlkg%20sldf&user_id=1" for 127.0.0.1 at 2017-08-21 18:28:27 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EntriesController#create as */*
+  Parameters: {"title"=>"First Title", "body"=>"lkdfjhglkdhglkdhlk ldksfjhglkjdfhlgkshlkf lkdsfjglksdfgsjdhlkfjgh lksdfjhglsdfkhlgkjshdlfk jgsdfjhglksdhjflgkhsdlfjkghsldkj hlghsldkfhglkdsh kljdfsjkghlkdfshglkjsdhlkg sldf", "user_id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "entries" ("title", "body", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "First Title"], ["body", "lkdfjhglkdhglkdhlk ldksfjhglkjdfhlgkshlkf lkdsfjglksdfgsjdhlkfjgh lksdfjhglsdfkhlgkjshdlfk jgsdfjhglksdhjflgkhsdlfjkghsldkj hlghsldkfhglkdsh kljdfsjkghlkdfshglkjsdhlkg sldf"], ["created_at", "2017-08-21 22:28:27.784142"], ["updated_at", "2017-08-21 22:28:27.784142"], ["user_id", 1]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 44ms (Views: 0.7ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/entries?title=First%20Title&body=dflgkjhslkghfsdlkgksghlkdfhglkshfdlkjghlskdfjhglkdsfjhglkjdhflkghsdlfkjghsldkfhglkjd&user_id=1" for 127.0.0.1 at 2017-08-21 18:29:01 -0400
+Processing by EntriesController#create as */*
+  Parameters: {"title"=>"First Title", "body"=>"dflgkjhslkghfsdlkgksghlkdfhglkshfdlkjghlskdfjhglkdsfjhglkjdhflkghsdlfkjghsldkfhglkjd", "user_id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "entries" ("title", "body", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "First Title"], ["body", "dflgkjhslkghfsdlkgksghlkdfhglkshfdlkjghlskdfjhglkdsfjhglkjdhflkghsdlfkjghsldkfhglkjd"], ["created_at", "2017-08-21 22:29:01.708437"], ["updated_at", "2017-08-21 22:29:01.708437"], ["user_id", 1]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 11ms (Views: 0.5ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2017-08-21 18:29:13 -0400
+Processing by EntriesController#index as */*
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2017-08-21 23:52:00 -0400
+Processing by EntriesController#index as */*
+  [1m[36mEntry Load (2.9ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+Completed 200 OK in 22ms (Views: 15.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-08-22 12:02:33 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 31ms (Views: 22.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/users?username=hello&passwerd=yoyo&phone=456" for 127.0.0.1 at 2017-08-22 12:03:17 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"hello", "passwerd"=>"yoyo", "phone"=>"456"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users?username=hello&passwerd=yoyo&phone=456" for 127.0.0.1 at 2017-08-22 12:03:21 -0400
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"hello", "passwerd"=>"yoyo", "phone"=>"456"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-08-22 12:04:05 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-08-22 12:04:20 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-08-22 12:04:21 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-08-22 12:04:22 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-08-22 12:04:34 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-08-22 12:04:36 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-08-22 12:05:03 -0400
+Processing by UsersController#create as */*
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 20ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-08-22 12:05:33 -0400
+Processing by UsersController#create as */*
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-08-22 12:05:34 -0400
+Processing by UsersController#create as */*
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-08-22 12:07:34 -0400
+Processing by UsersController#create as */*
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 12ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-08-22 12:47:37 -0400
+Processing by UsersController#create as */*
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-08-22 12:47:38 -0400
+Processing by UsersController#create as */*
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-08-22 12:48:47 -0400
+  
+SyntaxError (/Users/alex/theironyard/projects/capstone_mindframe/backend/app/controllers/users_controller.rb:23: syntax error, unexpected keyword_else
+    else
+        ^):
+  
+app/controllers/users_controller.rb:23: syntax error, unexpected keyword_else
+Started POST "/users" for 127.0.0.1 at 2017-08-22 12:50:13 -0400
+Processing by UsersController#create as */*
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 15ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-08-22 12:55:33 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 16ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users?username=yo&email=heyo&password=[FILTERED]&phone=1234&password_confirmation=[FILTERED]" for 127.0.0.1 at 2017-08-22 12:57:03 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"yo", "email"=>"heyo", "password"=>"[FILTERED]", "phone"=>"1234", "password_confirmation"=>"[FILTERED]"}
+Unpermitted parameter: :phone
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "yo"], ["email", "heyo"], ["password_digest", "$2a$10$IgPd6RPJE.kOcmL6S9mXSe5DB0Iu2.YWpCUbseSXC6NLl.NeO7tAm"], ["created_at", "2017-08-22 16:57:03.129164"], ["updated_at", "2017-08-22 16:57:03.129164"]]
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 75ms (Views: 0.7ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/users?username=yo&email=heyo&password=[FILTERED]&phone=1234&password_confirmation=[FILTERED]" for 127.0.0.1 at 2017-08-22 13:00:24 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"yo", "email"=>"heyo", "password"=>"[FILTERED]", "phone"=>"1234", "password_confirmation"=>"[FILTERED]"}
+Unpermitted parameter: :phone
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "yo"], ["email", "heyo"], ["password_digest", "$2a$10$h78nNwJSqDcqozv01mGVvuey5PZaDwopdvvN5YGTca3WmvqLPZjMi"], ["created_at", "2017-08-22 17:00:34.584454"], ["updated_at", "2017-08-22 17:00:34.584454"]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 90ms (Views: 1.2ms | ActiveRecord: 7.5ms)
+
+
+Started POST "/users?username=yo&email=heyo&password=[FILTERED]&phone_number=1234&password_confirmation=[FILTERED]" for 127.0.0.1 at 2017-08-22 13:06:24 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"yo", "email"=>"heyo", "password"=>"[FILTERED]", "phone_number"=>"1234", "password_confirmation"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'phone_number' for User.):
+  
+app/controllers/users_controller.rb:19:in `create'
+Started POST "/users?username=user&email=1@example.com&password=[FILTERED]&password_confirmation=[FILTERED]&phone_number=3172039112" for 127.0.0.1 at 2017-08-22 13:08:13 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"user", "email"=>"1@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "phone_number"=>"3172039112"}
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'phone_number' for User.):
+  
+app/controllers/users_controller.rb:19:in `create'
+Started POST "/users?username=user&email=1@example.com&password=[FILTERED]&password_confirmation=[FILTERED]&phone_number=317" for 127.0.0.1 at 2017-08-22 13:08:22 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"user", "email"=>"1@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "phone_number"=>"317"}
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'phone_number' for User.):
+  
+app/controllers/users_controller.rb:19:in `create'
+Started POST "/users?username=user&email=1@example.com&password=[FILTERED]&password_confirmation=[FILTERED]&phone=317" for 127.0.0.1 at 2017-08-22 13:08:31 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"user", "email"=>"1@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "phone"=>"317"}
+Unpermitted parameter: :phone
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "user"], ["email", "1@example.com"], ["password_digest", "$2a$10$rKioQdi2tG1T86jyq912F.DfROhCDj7At55RW14o4WQshXtP1N8C2"], ["created_at", "2017-08-22 17:08:31.418215"], ["updated_at", "2017-08-22 17:08:31.418215"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 73ms (Views: 0.5ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/users?username=user&email=1@example.com&password=[FILTERED]&password_confirmation=[FILTERED]&phone_number=317" for 127.0.0.1 at 2017-08-22 13:09:03 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"user", "email"=>"1@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "phone_number"=>"317"}
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'phone_number' for User.):
+  
+app/controllers/users_controller.rb:19:in `create'
+Started POST "/users?username=user&email=1@example.com&password=[FILTERED]&password_confirmation=[FILTERED]&phone=317" for 127.0.0.1 at 2017-08-22 13:09:28 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"user", "email"=>"1@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "phone"=>"317"}
+Unpermitted parameter: :phone
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "user"], ["email", "1@example.com"], ["password_digest", "$2a$10$sZ5IGplgBzAivL8DY4dfau7785vvHNAJjBCWALhh3BuWHfwCBjraW"], ["created_at", "2017-08-22 17:09:29.060542"], ["updated_at", "2017-08-22 17:09:29.060542"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 72ms (Views: 0.4ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/users?username=user&email=1@example.com&password=[FILTERED]&password_confirmation=[FILTERED]&phone=3172039112" for 127.0.0.1 at 2017-08-22 13:09:39 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"user", "email"=>"1@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "phone"=>"3172039112"}
+Unpermitted parameter: :phone
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "user"], ["email", "1@example.com"], ["password_digest", "$2a$10$e6cBX52mE3WANh0ouqVKau3NqJFEr5RfwtI0kCPOb9esx1OLqEpO2"], ["created_at", "2017-08-22 17:09:39.087233"], ["updated_at", "2017-08-22 17:09:39.087233"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 72ms (Views: 0.5ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/users?username=user&email=1@example.com&password=[FILTERED]&password_confirmation=[FILTERED]&phone=3172039112" for 127.0.0.1 at 2017-08-22 13:09:53 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"user", "email"=>"1@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "phone"=>"3172039112"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at", "phone") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "user"], ["email", "1@example.com"], ["password_digest", "$2a$10$ABEhVaJUU/ESNRilq3LUFO4Xn3PECh8SzskKEWyxk/.erzrulmAGy"], ["created_at", "2017-08-22 17:09:53.948285"], ["updated_at", "2017-08-22 17:09:53.948285"], ["phone", "3172039112"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 89ms (Views: 0.9ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/users?username=user&email=1@example.com&password=[FILTERED]&password_confirmation=[FILTERED]&phone=3172039112" for 127.0.0.1 at 2017-08-22 13:23:36 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"user", "email"=>"1@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "phone"=>"3172039112"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at", "phone") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "user"], ["email", "1@example.com"], ["password_digest", "$2a$10$M8EThlhvEc1CVyg4OKDEVuGf4slBWaAx4ZhnV4SvQr3..nNPWeDBm"], ["created_at", "2017-08-22 17:23:36.172992"], ["updated_at", "2017-08-22 17:23:36.172992"], ["phone", "3172039112"]]
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 72ms (Views: 0.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-22 13:26:05 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/var/rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/var/rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb (3.6ms)
+Completed 200 OK in 12ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2017-08-22 13:26:06 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users" for 127.0.0.1 at 2017-08-22 13:26:17 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-08-22 13:26:25 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/entries/1" for 127.0.0.1 at 2017-08-22 13:26:33 -0400
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 16ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
