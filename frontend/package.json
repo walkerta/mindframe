@@ -9,6 +9,7 @@
     "react": "^15.6.1",
     "react-addons-css-transition-group": "^15.6.0",
     "react-addons-transition-group": "^15.6.0",
+    "react-datepicker": "^0.53.0",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.1.2",

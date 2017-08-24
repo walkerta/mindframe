@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {Link} from 'react-router-dom';
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
@@ -34,6 +33,7 @@ export default class BaseLayout extends React.Component {
                width={200}
                open={this.state.open}
                onRequestChange={(open) => this.setState({open})}
+
              >
                <MenuItem onClick={this.handleClose}>
                  <Link to="/">Landing Page</Link>
@@ -50,6 +50,7 @@ export default class BaseLayout extends React.Component {
                <MenuItem onClick={this.handleClose}>
                  <Link to="/JournalPage">Sign In</Link>
                </MenuItem>
+               <Button color="contrast">Login</Button>
              </Drawer>
              {this.props.children}
            </div>
