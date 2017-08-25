@@ -9,28 +9,28 @@ const TextFieldExampleSimple = () => (
     <fieldset>
       <legend><em><h2>Sign Up Information</h2></em></legend>
     <TextField
-      hintText="First Name Field"
+      hintText="First Name"
       floatingLabelText="First Name"
     /><br />
 
     <TextField
-      hintText="Last Name Field"
+      hintText="Last Name"
       floatingLabelText="Last Name"
     /><br />
     <TextField
-      hintText="Email Field"
+      hintText="Email"
       floatingLabelText="Email"
     /><br />
 
 
     <TextField
-      hintText="User Name Field"
+      hintText="User Name"
       floatingLabelText="User Name"
       type="username"
       required="required"
     /><br />
     <TextField
-      hintText="Password Field"
+      hintText="Password"
       floatingLabelText="Password"
       type="password"
       required="required"
@@ -38,7 +38,7 @@ const TextFieldExampleSimple = () => (
 
 
     <TextField
-      hintText="Password Field"
+      hintText="Confirm Password"
       floatingLabelText="Confirm Password"
       input type="password"
       required="required"
