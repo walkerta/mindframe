@@ -45,11 +45,12 @@ export default class BaseLayout extends React.Component {
                  <Link to="/HomePage">Home Page</Link>
                </MenuItem>
                <MenuItem onClick={this.handleClose}>
-                 <Link to="/SigninPage">Sign In</Link>
+                 <Link to="/JournalPage">Journal Page</Link>
                </MenuItem>
                <MenuItem onClick={this.handleClose}>
-                 <Link to="/JournalPage">Sign In</Link>
+                 <Link to="/SigninPage">Sign In</Link>
                </MenuItem>
+
              </Drawer>
              {this.props.children}
            </div>

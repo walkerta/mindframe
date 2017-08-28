@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from 'muicss/lib/react/button';
 import TextField from 'material-ui/TextField';
-import Paper from 'material-ui/Paper';
 import 'typeface-roboto';
 
 
