@@ -1,36 +1,20 @@
 import React from 'react';
-import { render } from 'react-dom';
-import { MuiThemeProvider } from 'material-ui/styles';
 
+import DatePicker from 'material-ui/DatePicker';
 
-
-function JournalPage() {
-  return (
-
-  class JournalPageCustomInput extends React.Component {
-
-    <div>
-      render () {
-        return (
-          <DatePicker
+export default class JournalPage extends React.Component {
+  render () {
+    return (
+      <div>
+        <DatePicker
           selected={this.state.startDate}
           onChange={this.handleChange}
-          className="red-border"
-    </div>
-  )
- }
+          className="red-border" />
+        <p>What would you like to write about today?</p>
+        <textarea name="" cols="20" rows="4">Enter your comments.....</textarea>
+      </div>
+    )
+  }
 }
 
-    <div>
-      <MuiThemeProvider theme={theme}>
-      <form action="" method="post">
-      <p>What would you like to write about today?<p>
-      <textarea name="" cols="20" rows="4">Enter your comments.....</textarea>
-      </MuiThemeProvider>
-      </form>
-    </div>
-
-  );
-}
-
-//render(<JournalPage />, document.querySelector('#JournalPage'));
+      
