@@ -1,4 +1,5 @@
 import React from 'react';
+
 import DatePicker from 'material-ui/DatePicker';
 
 export default class JournalPage extends React.Component {
@@ -15,3 +16,5 @@ export default class JournalPage extends React.Component {
     )
   }
 }
+
+      
