@@ -24,7 +24,7 @@ import Mobileapp from '../images/mobileapp.png';
 import TSMobile from '../images/ts-mobile.jpg';
 
 import DialogExampleSimple from './JournalEntry.js';
-import DrawerSimpleExample from './Drawer.js';
+
 
 
 const styles = {
@@ -225,9 +225,6 @@ const tilesData4 = [
 
 const GridListExampleSingleLine = () => (
   <div>
-  <div>
-  <center><DrawerSimpleExample/></center>
-  </div>
   <div>
     <center><DialogExampleSimple/></center>
   </div>
