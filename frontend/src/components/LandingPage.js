@@ -39,11 +39,11 @@ const TextFieldExampleSimple = () => (
     <TextField
       hintText="Confirm Password"
       floatingLabelText="Confirm Password"
-      input type="password"
+      type="password"
       required="required"
     /><br />
 
-  <Button color="primary" input type="submit" size="lg">Submit</Button>{' '}
+  <Button color="primary" type="submit" size="lg">Submit</Button>{' '}
 </fieldset>
   </div>
 

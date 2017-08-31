@@ -30,16 +30,12 @@ export default class BaseLayout extends React.Component {
 
           <div>
             <AppBar
-              
-              zDepth={100}
               title="Mindframe"
 
                onLeftIconButtonTouchTap={this.handleToggle}
                iconClassNameRight="muidocs-icon-navigation-expand-more"/>
             <Drawer
                docked={false}
-
-               zDepth={10}
                width={200}
                open={this.state.open}
                onRequestChange={(open) => this.setState({open})}
