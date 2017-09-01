@@ -25,7 +25,7 @@ export default class DrawerSimpleExample extends React.Component {
           containerStyle={styles.navBar}
         >
           <MenuItem>Home</MenuItem>
-          <MenuItem>JournalEntry</MenuItem>
+          <MenuItem>JournalPage</MenuItem>
           <MenuItem>LandingPage</MenuItem>
           <MenuItem>CustomizePage</MenuItem>
           <MenuItem>LogOut</MenuItem>

@@ -30,16 +30,12 @@ export default class BaseLayout extends React.Component {
 
           <div>
             <AppBar
-              
-              zDepth={100}
               title="Mindframe"
 
                onLeftIconButtonTouchTap={this.handleToggle}
                iconClassNameRight="muidocs-icon-navigation-expand-more"/>
             <Drawer
                docked={false}
-
-               zDepth={10}
                width={200}
                open={this.state.open}
                onRequestChange={(open) => this.setState({open})}
@@ -48,17 +44,24 @@ export default class BaseLayout extends React.Component {
                <MenuItem onClick={this.handleClose} onChange={LandingPage}>
                  <Link to="/">Landing Page</Link>
                </MenuItem>
+
                <MenuItem onClick={this.handleClose} onChange={CustomizePage}>
                  <Link to="/Customize">Customize Page</Link>
                </MenuItem>
+
                <MenuItem onClick={this.handleClose} onChange={HomePage}>
                  <Link to="/HomePage">Home Page</Link>
                </MenuItem>
 
                <MenuItem onClick={this.handleClose}>
                  <Link to="/JournalPage">Journal Page</Link>
-
                </MenuItem>
+
+               <MenuItem onClick={this.handleClose}>
+                 <Link to="/ListPage">List Page</Link>
+               </MenuItem>
+
+
                <MenuItem onClick={this.handleClose}>
                  <Link to="/SigninPage">Sign In</Link>
                </MenuItem>
