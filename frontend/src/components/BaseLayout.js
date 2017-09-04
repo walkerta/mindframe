@@ -9,6 +9,7 @@ import LandingPage from './LandingPage';
 import CustomizePage from './CustomizePage';
 import HomePage from './HomePage';
 import SigninPage from './SigninPage';
+import '../styles/index.css';
 
 
 
@@ -30,12 +31,12 @@ export default class BaseLayout extends React.Component {
 
           <div>
             <AppBar
-              
               zDepth={100}
-              title="Mindframe"
-
+              title="MINDFRAME"
+              className="appBar"
                onLeftIconButtonTouchTap={this.handleToggle}
                iconClassNameRight="muidocs-icon-navigation-expand-more"/>
+
             <Drawer
                docked={false}
 
@@ -45,24 +46,23 @@ export default class BaseLayout extends React.Component {
                onRequestChange={(open) => this.setState({open})}
 
              >
+             <div className="theme">
                <MenuItem onClick={this.handleClose} onChange={LandingPage}>
-                 <Link to="/">Landing Page</Link>
+                 <Link to="/" className="theme">Landing Page</Link>
                </MenuItem>
-               <MenuItem onClick={this.handleClose} onChange={CustomizePage}>
-                 <Link to="/Customize">Customize Page</Link>
-               </MenuItem>
+
                <MenuItem onClick={this.handleClose} onChange={HomePage}>
-                 <Link to="/HomePage">Home Page</Link>
+                 <Link to="/HomePage" className="theme">Home Page</Link>
                </MenuItem>
 
                <MenuItem onClick={this.handleClose}>
-                 <Link to="/JournalPage">Journal Page</Link>
+                 <Link to="/JournalPage" className="theme">Journal Page</Link>
 
                </MenuItem>
                <MenuItem onClick={this.handleClose}>
-                 <Link to="/SigninPage">Sign In</Link>
+                 <Link to="/SigninPage" className="theme">Sign In</Link>
                </MenuItem>
-
+               </div>
              </Drawer>
              {this.props.children}
            </div>

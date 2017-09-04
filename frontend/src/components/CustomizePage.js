@@ -13,7 +13,7 @@ import MenuItem from 'material-ui/MenuItem';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 
-import JournalEntry from './JournalEntry';
+
 
 import Journal from '../images/journal.jpg';
 import Diary from '../images/Diary.png';
@@ -23,7 +23,8 @@ import JournalPeace from '../images/journalpeace.jpg';
 import Mobileapp from '../images/mobileapp.png';
 import TSMobile from '../images/ts-mobile.jpg';
 
-import DialogExampleSimple from './JournalEntry.js';
+
+
 
 
 
@@ -225,9 +226,7 @@ const tilesData4 = [
 
 const GridListExampleSingleLine = () => (
   <div>
-  <div>
-    <center><DialogExampleSimple/></center>
-  </div>
+
     <div>
        <center><DatePicker hintText="Calender" autoOK='true' mode="landscape" /></center>
     </div>
@@ -267,8 +266,6 @@ const GridListExampleSingleLine = () => (
             ))}
           </GridList>
         </div>
-
-
 
      </div>
    );

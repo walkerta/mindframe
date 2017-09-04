@@ -37,7 +37,7 @@ ReactDOM.render(
     <BrowserRouter>
       <MuiThemeProvider>
         <BaseLayout>
-        <Switch>
+        <Switch >
           <Route exact path="/" component={LandingPage} />
           <Route path="/Customize" component={CustomizePage} />
           <Route path="/HomePage" component={HomePage} />

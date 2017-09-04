@@ -1,20 +1,27 @@
 import React from 'react';
-
+import Button from 'muicss/lib/react/button';
 import DatePicker from 'material-ui/DatePicker';
+import TextField from 'material-ui/TextField';
+
+
 
 export default class JournalPage extends React.Component {
   render () {
     return (
       <div>
-        <DatePicker
-          selected={this.state.startDate}
-          onChange={this.handleChange}
-          className="red-border" />
-        <p>What would you like to write about today?</p>
-        <textarea name="" cols="20" rows="4">Enter your comments.....</textarea>
+        <div className="body">
+        <center>
+          <p className="write">What would you like to write about today?</p>
+          <textarea className="journalEntry" name="" placeholder="How was your day?"></textarea>
+          <br/>
+          <Button
+            className="button1"
+            type="submit">
+              Submit
+          </Button>
+        </center>
+        </div>
       </div>
     )
   }
 }
-
-      
