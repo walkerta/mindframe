@@ -5,6 +5,7 @@ import 'typeface-roboto';
 import '../styles/index.css';
 
 
+
 export default () => (
 
 
@@ -16,13 +17,13 @@ export default () => (
         <header id="header">
           <div class="mui-appbar mui--appbar-line-height">
             <div class="mui-container-fluid">
-                <span class="mui--text-title mui--visible-xs-inline-block"><h1><center>Welcome Back!</center></h1></span>
+                <span class="mui--text-title mui--visible-xs-inline-block"><h1 className="signin"><center>WELCOME BACK!</center></h1></span>
             </div>
             <div id="content-wrapper">
-              <h2><center>Sign In</center></h2>
+              <h2 className="signin"><center>SIGN IN</center></h2>
               <center>
               <TextField
-                hintText="Email Field"
+                hintText="Email"
                 floatingLabelText="Email"
                 type="email"
               />
@@ -30,7 +31,7 @@ export default () => (
               <br />
               <center>
               <TextField
-                hintText="Password Field"
+                hintText="Password"
                 floatingLabelText="Password"
                 type="password"
                 required="required"

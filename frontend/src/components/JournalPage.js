@@ -12,7 +12,7 @@ export default class JournalPage extends React.Component {
         <div className="body">
         <center>
           <p className="write">What would you like to write about today?</p>
-          <textarea className="journalEntry" name="" placeholder="How was your day?"></textarea>
+          <textarea className="journalEntry" name="" cols="100" rows="8" placeholder="Tell me about your day....."></textarea>
           <br/>
           <Button
             className="button1"

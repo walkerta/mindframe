@@ -27,6 +27,7 @@ import CustomizePage from './components/CustomizePage';
 import HomePage from './components/HomePage';
 import SigninPage from './components/SigninPage';
 import JournalPage from './components/JournalPage';
+import Start from './components/Start';
 
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
@@ -38,7 +39,7 @@ ReactDOM.render(
       <MuiThemeProvider>
         <BaseLayout>
         <Switch >
-          <Route exact path="/" component={LandingPage} />
+          <Route exact path="/" component={Start} />
           <Route path="/Customize" component={CustomizePage} />
           <Route path="/HomePage" component={HomePage} />
           <Route path="/SigninPage" component={SigninPage} />
