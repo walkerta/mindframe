@@ -51,6 +51,11 @@ export default class BaseLayout extends React.Component {
                  <Link to="/" className="theme">Start</Link>
                </MenuItem>
                </center>
+               <center>
+              <MenuItem onClick={this.handleClose} onChange={LandingPage}>
+                <Link to="/LandingPage" className="theme">LandingPage</Link>
+              </MenuItem>
+              </center>
                 <center>
                <MenuItem onClick={this.handleClose} onChange={HomePage}>
                  <Link to="/HomePage" className="theme">HOME</Link>

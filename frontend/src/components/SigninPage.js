@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from 'muicss/lib/react/button';
 import TextField from 'material-ui/TextField';
+import { Link } from 'react-router-dom';
 import 'typeface-roboto';
 import '../styles/index.css';
 
@@ -39,7 +40,7 @@ export default () => (
                 </center>
                 <br />
                 <center>
-              <Button  className='button' input type="submit" size="lg">Submit</Button>{' '}
+              <Link to="/HomePage" className='button' type="submit" size="lg">Submit</Link>{' '}
               </center>
             </div>
           </div>

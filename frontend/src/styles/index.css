@@ -39,6 +39,7 @@ body {
   height: 70px;
   width: 200px;
   font-size: 30px;
+  padding-top: 10px;
   margin-right: 18px;
 }
 
@@ -71,11 +72,19 @@ body {
 }
 
 .journalEntry {
-  width: 600px;
-  height: 500px;
+  
   border: 3px solid black;
   font-size: 18px;
   padding: 1cm 1cm 1cm 1cm;
+  line-height: 150%;
+  box-shadow: 5px 5px 5px black;
+}
+
+.journalEntry1 {
+
+  border: 3px solid black;
+  font-size: 18px;
+  padding-left: 1cm;
   line-height: 150%;
   box-shadow: 5px 5px 5px black;
 }
@@ -119,6 +128,7 @@ body {
 
 .backgroundTable {
   background-color:  #00BCD4;
+
 }
 
 .listName {
@@ -127,14 +137,14 @@ body {
 }
 
 .start {
-  font-size: 150px;
+  font-size: 75px;
   color: #efefef;
   text-shadow: 6px 6px 10px black;
-  padding-top: 100px;
+
 }
 
 .successful {
-  font-size: 50px;
+  font-size: 30px;
   color: black;
   text-shadow: 3px 3px 3px #efefef;
 }

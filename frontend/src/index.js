@@ -30,6 +30,7 @@ import JournalPage from './components/JournalPage';
 import Start from './components/Start';
 
 
+
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 //wrap provider around router
@@ -44,6 +45,7 @@ ReactDOM.render(
           <Route path="/HomePage" component={HomePage} />
           <Route path="/SigninPage" component={SigninPage} />
           <Route path="/JournalPage" component={JournalPage} />
+          <Route path="/LandingPage" component={LandingPage} />
         </Switch>
         </BaseLayout>
       </MuiThemeProvider>

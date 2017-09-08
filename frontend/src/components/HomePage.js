@@ -2,6 +2,7 @@ import React from 'react';
 import Journal from './JournalPage';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
+import { Link } from 'react-router-dom';
 import {
   Card,
   CardHeader,
@@ -19,6 +20,8 @@ import {
   TableRow,
   TableRowColumn,
 } from 'material-ui/Table';
+import JournalPage from './JournalPage';
+
 
 
 const style = {
@@ -28,19 +31,39 @@ const style = {
 
 
 export default class ImageGridList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      open: false,
+    };
+  }
+
+  handleTouchTap = () => {
+    this.setState({
+      open: true,
+    });
+  };
+
+  handleRequestClose = () => {
+    this.setState({
+      open: false,
+    });
+  };
+
   render() {
     return (
       <div className="background">
     <div>
       <center><h1 className="welcome">Hello USER</h1></center>
     </div>
+
     <div>
-  <Table >
+  <Table>
     <TableHeader className="backgroundTable">
       <TableRow className="listName">
-        <TableHeaderColumn>ID</TableHeaderColumn>
-        <TableHeaderColumn>Name</TableHeaderColumn>
-        <TableHeaderColumn>Status</TableHeaderColumn>
+        <TableHeaderColumn>Date</TableHeaderColumn>
+        <TableHeaderColumn>Title</TableHeaderColumn>
+        <TableHeaderColumn>Rating</TableHeaderColumn>
       </TableRow>
     </TableHeader>
     <TableBody className="listName">
@@ -72,12 +95,18 @@ export default class ImageGridList extends React.Component {
     </TableBody>
   </Table>
           </div>
-
-      <div className="floatingButton">
-        <FloatingActionButton >
-          <ContentAdd className="listName"/>
-        </FloatingActionButton>
+    <center>
+      <div>
+        <JournalPage/>
       </div>
+      <br/>
+      <div>
+        <Link to="/" className="button2">
+          LogOut
+        </Link>
+      </div>
+    </center>
+
       </div>
 
 

@@ -1,27 +1,70 @@
 import React from 'react';
+import Dialog from 'material-ui/Dialog';
+import FlatButton from 'material-ui/FlatButton';
 import Button from 'muicss/lib/react/button';
-import DatePicker from 'material-ui/DatePicker';
-import TextField from 'material-ui/TextField';
+import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
+import { Link } from 'react-router-dom';
 
 
+const styles = {
+  radioButton: {
+    marginTop: 16,
+  },
+};
 
+/**
+ * Dialog content can be scrollable.
+ */
 export default class JournalPage extends React.Component {
-  render () {
+  state = {
+    open: false,
+  };
+
+  handleOpen = () => {
+    this.setState({open: true});
+  };
+
+  handleClose = () => {
+    this.setState({open: false});
+  };
+
+  
+
+  render() {
+
+
     return (
       <div>
-        <div className="body">
+        <Button className="button1" onClick={this.handleOpen} >New Entry</Button>
+        <Dialog
+          title="What would you like to write about today?"
+
+          modal={false}
+          open={this.state.open}
+          onRequestClose={this.handleClose}
+          autoScrollBodyContent={true}
+        >
         <center>
-          <p className="write">What would you like to write about today?</p>
-          <textarea className="journalEntry" name="" cols="100" rows="8" placeholder="Tell me about your day....."></textarea>
-          <br/>
-          <Button
-            className="button1"
-            type="submit">
-              Submit
-          </Button>
-        </center>
+        <div className="title">
+        <textarea className="journalEntry1" rows="1" cols="69" placeholder="Title"></textarea>
         </div>
+      </center><br/>
+      <div className="body">
+      <center>
+        <textarea className="journalEntry" rows="20" cols="69" name="" placeholder="Tell me about your day....."></textarea>
+        <br/>
+        <Link to="/HomePage"
+          className="button2"
+          type="submit"
+          onClick={this.handleClose}>
+
+            Submit
+        </Link>
+
+      </center>
       </div>
-    )
+        </Dialog>
+      </div>
+    );
   }
 }
