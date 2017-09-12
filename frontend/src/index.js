@@ -28,6 +28,7 @@ import HomePage from './components/HomePage';
 import SigninPage from './components/SigninPage';
 import JournalPage from './components/JournalPage';
 import Start from './components/Start';
+import Practice from './components/Practice';
 
 
 
@@ -46,6 +47,7 @@ ReactDOM.render(
           <Route path="/SigninPage" component={SigninPage} />
           <Route path="/JournalPage" component={JournalPage} />
           <Route path="/LandingPage" component={LandingPage} />
+          <Route path="/Practice" component={Practice} />
         </Switch>
         </BaseLayout>
       </MuiThemeProvider>

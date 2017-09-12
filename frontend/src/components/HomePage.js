@@ -1,5 +1,6 @@
 import React from 'react';
 import Journal from './JournalPage';
+import Button from 'muicss/lib/react/button';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import { Link } from 'react-router-dom';
@@ -21,8 +22,7 @@ import {
   TableRowColumn,
 } from 'material-ui/Table';
 import JournalPage from './JournalPage';
-
-
+import Practice from './Practice';
 
 const style = {
   marginRight: 20,
@@ -30,13 +30,54 @@ const style = {
 };
 
 
-export default class ImageGridList extends React.Component {
+
+export default class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       open: false,
+      title: "",
+      body: "",
+
     };
   }
+
+  addEntry = () => {
+   const {title, body} = this.state;
+
+   // Your API expects POST data to be sent as form data, which is why we need the next few lines
+   const form = new FormData();
+   form.append("title", title);
+   form.append("body", body);
+   form.append("user_id", 12);
+   // This particular end point is used to create a new journal entry
+   fetch("https://mindframebackend.herokuapp.com/users/12", {
+       method: "POST",
+       body: form
+   })
+   // The response type of the request is JSON
+   .then(response => response.json())
+   // Once we add a new journal entry, we should fetch all journal entries so that we can update the display
+   .then(this.getEntries())
+  }
+  getEntries = () => {
+    /// This end point just gets a list of all entries
+    fetch("https://mindframebackend.herokuapp.com/entries")
+      .then(r => r.json())
+      .then(entries => {
+
+        this.setState({entries: entries.filter(function(entry){
+          return entry.user_id === 1;
+        })
+      });
+    })
+  }
+
+  componentDidMount() {
+
+    this.getEntries();
+  }
+
 
   handleTouchTap = () => {
     this.setState({
@@ -52,9 +93,11 @@ export default class ImageGridList extends React.Component {
 
   render() {
     return (
+
       <div className="background">
+
     <div>
-      <center><h1 className="welcome">Hello USER</h1></center>
+      <center><h1 className="welcome">Hello </h1></center>
     </div>
 
     <div>
@@ -68,30 +111,11 @@ export default class ImageGridList extends React.Component {
     </TableHeader>
     <TableBody className="listName">
       <TableRow className="backgroundTable">
-        <TableRowColumn>1</TableRowColumn>
-        <TableRowColumn>John Smith</TableRowColumn>
-        <TableRowColumn>Employed</TableRowColumn>
+        <TableRowColumn>9/12/2018</TableRowColumn>
+        <TableRowColumn>Got a New Man, Finally!</TableRowColumn>
+        <TableRowColumn>5 Stars</TableRowColumn>
       </TableRow>
-      <TableRow className="backgroundTable">
-        <TableRowColumn>2</TableRowColumn>
-        <TableRowColumn>Randal White</TableRowColumn>
-        <TableRowColumn>Unemployed</TableRowColumn>
-      </TableRow>
-      <TableRow className="backgroundTable">
-        <TableRowColumn>3</TableRowColumn>
-        <TableRowColumn>Stephanie Sanders</TableRowColumn>
-        <TableRowColumn>Employed</TableRowColumn>
-      </TableRow>
-      <TableRow className="backgroundTable">
-        <TableRowColumn>4</TableRowColumn>
-        <TableRowColumn>Steve Brown</TableRowColumn>
-        <TableRowColumn>Employed</TableRowColumn>
-      </TableRow>
-      <TableRow className="backgroundTable">
-        <TableRowColumn>5</TableRowColumn>
-        <TableRowColumn>Christopher Nolan</TableRowColumn>
-        <TableRowColumn>Unemployed</TableRowColumn>
-      </TableRow>
+
     </TableBody>
   </Table>
           </div>
@@ -101,9 +125,7 @@ export default class ImageGridList extends React.Component {
       </div>
       <br/>
       <div>
-        <Link to="/" className="button2">
-          LogOut
-        </Link>
+        <Button><Link style={{textDecoration: 'none'}} to="/">Log Out</Link></Button>
       </div>
     </center>
 
@@ -113,4 +135,5 @@ export default class ImageGridList extends React.Component {
     );
     {this.props.children}
   }
+
 }

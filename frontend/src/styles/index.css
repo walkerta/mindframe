@@ -4,6 +4,13 @@ body {
   font-family: sans-serif;
 }
 
+.start {
+  font-size: 75px;
+  color: #efefef;
+  text-shadow: 6px 6px 10px black;
+  margin-top: 180px;
+}
+
 .theme {
   background-color: #efefef;
   height: 1000px;
@@ -72,7 +79,7 @@ body {
 }
 
 .journalEntry {
-  
+
   border: 3px solid black;
   font-size: 18px;
   padding: 1cm 1cm 1cm 1cm;
@@ -99,7 +106,12 @@ body {
   text-shadow: 2px 2px 2px black;
 }
 
-.signup, .signin, {
+.signup {
+  color: #00BCD4;
+  text-shadow: 2px 2px 2px black;
+}
+
+.signin {
   color: #00BCD4;
   text-shadow: 2px 2px 2px black;
 }
@@ -136,12 +148,7 @@ body {
   text-shadow: 2px 2px 2px white;
 }
 
-.start {
-  font-size: 75px;
-  color: #efefef;
-  text-shadow: 6px 6px 10px black;
 
-}
 
 .successful {
   font-size: 30px;
@@ -152,4 +159,8 @@ body {
 .startButtons {
   display: flex;
   justify-content: center;
+}
+
+.link {
+
 }

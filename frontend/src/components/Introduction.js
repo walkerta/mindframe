@@ -12,7 +12,7 @@ export default class Introduction extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="bgImage">
         <div>
         <center>
         <p className="start">MINDFRAME</p>
@@ -21,10 +21,10 @@ export default class Introduction extends React.Component {
         </div>
 
         <div className="startButtons">
-<center>
-          <Link to="/LandingPage" className="button2">Sign Up</Link>
-          <Link to="/SigninPage" className="button2">Log In</Link>
-</center>
+        <center>
+          <Button><Link style={{textDecoration: 'none'}} to="/LandingPage">Sign Up</Link></Button>
+          <Button><Link style={{textDecoration: 'none'}} to="/SigninPage">Login</Link></Button>
+        </center>
         </div>
       </div>
     );

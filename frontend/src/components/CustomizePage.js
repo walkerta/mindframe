@@ -224,7 +224,7 @@ const tilesData4 = [
 
 
 
-const GridListExampleSingleLine = () => (
+const Customize = () => (
   <div>
 
     <div>
@@ -271,4 +271,4 @@ const GridListExampleSingleLine = () => (
    );
 
 
-   export default GridListExampleSingleLine;
+   export default Customize;
