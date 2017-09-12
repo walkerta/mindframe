@@ -111,9 +111,9 @@ export default class HomePage extends React.Component {
     </TableHeader>
     <TableBody className="listName">
       <TableRow className="backgroundTable">
-        <TableRowColumn>9/12/2018</TableRowColumn>
-        <TableRowColumn>Got a New Man, Finally!</TableRowColumn>
-        <TableRowColumn>5 Stars</TableRowColumn>
+        <TableRowColumn></TableRowColumn>
+        <TableRowColumn></TableRowColumn>
+        <TableRowColumn></TableRowColumn>
       </TableRow>
 
     </TableBody>
